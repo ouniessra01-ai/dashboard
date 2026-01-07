@@ -1,0 +1,19 @@
+.map-card {
+  height: 300px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, margin-top 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    margin-top: -4px;
+  }
+}
+
+#leaflet-map {
+  width: 100%;
+  height: 100%;
+}

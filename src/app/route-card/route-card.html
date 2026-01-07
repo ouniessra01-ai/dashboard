@@ -1,0 +1,32 @@
+<div class="route-card">
+  <div class="card-header">
+    <h3>Numero d'expédition : {{ expeditionNumber }}</h3>
+  </div>
+  <div class="card-body">
+    <div class="top-row">
+      <div class="info-item">
+        <div class="label"><strong>Type de matière:</strong></div>
+        <div class="value">{{ materialType }}</div>
+      </div>
+      <div class="semi-image">
+        <img src="assets/images/semi.png" alt="Semi">
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="label">
+        <img src="assets/images/start.png" class="image" />
+        <strong>Point de départ:</strong>
+      </div>
+      <div class="value">{{ fromAddress }}</div>
+    </div>
+
+    <div class="info-item">
+      <div class="label">
+        <img src="assets/icons/location.svg" class="icon" />
+        <strong>Point d'arrivée:</strong>
+      </div>
+      <div class="value">{{ toAddress }}</div>
+    </div>
+  </div>
+</div>
