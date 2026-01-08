@@ -8,14 +8,14 @@ import { MapCard } from '../map-card/map-card';
   selector: 'app-dashboard',
   imports: [CommonModule, StatsWidget, RouteCard, MapCard],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.scss',
+  styleUrls: ['./dashboard.scss'], // ✅ fixed plural
 })
-export class Dashboard {
+export class DashboardComponent {
   stats = [
-    { label: 'Véhicules', value: '150', icon: 'fas fa-truck', image: 'Vector.svg' },
-    { label: 'Temps d\'Attente', value: '5 min', icon: 'fas fa-clock', image: 'time.svg' },
-    { label: 'Quais', value: '12', icon: 'fas fa-warehouse', image: 'dock.svg' },
-    { label: 'Vérifications', value: '89%', icon: 'fas fa-check-circle', image: 'Verification.svg' }
+    { label: 'Véhicules', value: '13', image: 'Vector.svg' },
+    { label: 'Temps d\'Attente', value: '15 min', image: 'time.svg' },
+    { label: 'Quais', value: '7', image: 'dock.svg' },
+    { label: 'Vérifications', value: '45', image: 'Verification.svg' }
   ];
 
   route = {

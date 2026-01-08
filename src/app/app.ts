@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { Dashboard } from './dashboard/dashboard';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard';
 
 @Component({
   selector: 'app-root',
-  imports: [Dashboard],
-  template: '<app-dashboard></app-dashboard>',
-  styleUrl: './app.scss'
+  standalone: true,
+  imports: [RouterOutlet, DashboardComponent],
+  templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('road-tracking-dashboard');
+  title = () => 'Road Tracking Dashboard';
 }

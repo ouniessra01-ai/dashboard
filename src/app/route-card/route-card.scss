@@ -14,15 +14,11 @@
   &:hover {
     transform: scale(1.03); 
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); 
+    border: 2px solid #fff9c4
   }
 
 
 }
-
-
-
-
-
 .top-row {
   display: flex;
   justify-content: space-between;
@@ -58,4 +54,13 @@
 .icon {
   width: 20px;
   height: 20px;
+}
+.route-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f5a623; 
+  margin-bottom: 12px;
+  text-align: center;
+  border-bottom: 2px solid #f5a623;
+  padding-bottom: 6px;
 }
