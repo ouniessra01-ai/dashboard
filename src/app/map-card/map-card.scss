@@ -3,15 +3,16 @@
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
+  margin-top: 50px;
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease, margin-top 0.3s ease;
-
+  transition: transform 0.2s ease, box-shadow 0.2s ease;;
   &:hover {
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-    margin-top: -4px;
+    transform: scale(1.03); 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); 
     border: 2px solid #fff9c4
   }
+
+  
 }
 
 #leaflet-map {
@@ -19,4 +20,10 @@
   height: 100%;
    
 
+}
+@media (max-width: 768px) {
+  .map-card {
+    height: 300px; 
+    min-height: 300px;
+  }
 }

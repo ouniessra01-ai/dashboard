@@ -1,6 +1,13 @@
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;          
+  overflow-y: auto;  
+  scroll-behavior: smooth;  
+}
+
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f8f9fa;
 }

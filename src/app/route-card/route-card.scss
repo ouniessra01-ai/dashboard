@@ -1,5 +1,4 @@
 .route-card {
-  
   max-width: 500px;
   background-color: #fff;
   border-radius: 12px;
@@ -7,8 +6,7 @@
   padding: 20px;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
-  margin-top: 20px;
-  margin-right:50px;
+  margin: 0 20px 0 0; 
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;;
   &:hover {
@@ -59,8 +57,10 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #f5a623; 
-  margin-bottom: 12px;
+  margin-bottom: 0px;
   text-align: center;
   border-bottom: 2px solid #f5a623;
   padding-bottom: 6px;
+  margin-bottom: 8px;
+  
 }
