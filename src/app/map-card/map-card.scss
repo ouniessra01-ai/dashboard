@@ -27,3 +27,9 @@
     min-height: 300px;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .map-card {
+    background: #2a2a2a;
+    border: 1px solid #444;
+  }
+}

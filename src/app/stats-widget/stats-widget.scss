@@ -58,3 +58,18 @@
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  :host {
+    .stats-widget {
+      background: #2a2a2a;
+
+      .value {
+        color: #ffffff !important;   
+      }
+
+      .label {
+        color: #dddddd !important;
+      }
+    }
+  }
+}
