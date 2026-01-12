@@ -8,7 +8,7 @@ import { MapCard } from '../map-card/map-card';
   selector: 'app-dashboard',
   imports: [CommonModule, StatsWidget, RouteCard, MapCard],
   templateUrl: './dashboard.html',
-  styleUrls: ['./dashboard.scss'], // ✅ fixed plural
+  styleUrls: ['./dashboard.scss'], 
 })
 export class DashboardComponent {
   stats = [
