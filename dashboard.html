@@ -1,0 +1,28 @@
+<div class="dashboard">
+  <h1>Tableau de Bord de Suivi Routier</h1>
+  <div class="stats-grid">
+    <app-stats-widget
+      *ngFor="let stat of stats"
+      [label]="stat.label"
+      [value]="stat.value"
+      [image]="stat.image || ''">
+    </app-stats-widget>
+  </div>
+  <div class="main-content">
+    <div class="description-panel">
+  <app-route-card
+    [expeditionNumber]="route.expeditionNumber"
+    [fromAddress]="route.fromAddress"
+    [toAddress]="route.toAddress"
+    [materialType]="route.materialType">
+  </app-route-card>
+ </div>
+ <div class="map-panel">
+  <app-map-card
+    [fromAddress]="route.fromAddress"
+    [toAddress]="route.toAddress">
+  </app-map-card>
+</div>
+</div>
+</div>
+  
