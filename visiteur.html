@@ -1,0 +1,67 @@
+<div class="visiteur-page">
+  <div class="header">
+    <h2>Liste des Visiteurs</h2>
+    <span class="add-icon" (click)="resetSelected(); showPopup = true">
+      <i class="fa fa-plus-circle"></i>
+    </span>
+  </div>
+
+  <div class="search-bar">
+    <input 
+      type="text" 
+      placeholder="Rechercher par numéro d'expédition..." 
+      [(ngModel)]="searchTerm" />
+    <button *ngIf="searchTerm" class="clear-btn" (click)="searchTerm=''">✖</button>
+  </div>
+
+  <table class="visiteur-table">
+    <thead>
+      <tr>
+        
+        <th (click)="setSort('nom')">Nom</th>
+        <th (click)="setSort('creneau')">Créneaux Horaires</th>
+        <th (click)="setSort('status')">Status</th>
+        <th (click)="setSort('profil')">Profil</th>
+        <th (click)="setSort('localisation')">Localisation</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+      <tr *ngFor="let item of filteredVisiteurs | slice:(currentPage-1)*pageSize:(currentPage)*pageSize; let i = index"
+          [class.retard-row]="parseCreneau(item.creneau) < 0">
+        <td>{{ item.nom }}</td>
+        <td>{{ item.creneau }}</td>
+        <td><span class="status" [class]="item.statusClass">{{ item.status }}</span></td>
+        <td><span class="profil" [class]="item.profilClass">{{ item.profil }}</span></td>
+        <td>
+          <span [ngClass]="{
+            'localisation-enroute': item.localisation === 'En route',
+            'localisation-site': item.localisation === 'Sur site'
+          }">
+            {{ item.localisation }}
+          </span>
+        </td>
+        <td class="actions-cell">
+          <i class="fa fa-edit edit-icon" (click)="openPopupFromRow(item, i + (currentPage-1)*pageSize)"></i>
+          <i class="fa fa-trash delete-icon" (click)="deleteVisitor(i + (currentPage-1)*pageSize)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <span>{{ (currentPage-1)*pageSize+1 }}–{{ (currentPage*pageSize > visiteurs.length ? visiteurs.length : currentPage*pageSize) }} sur {{ visiteurs.length }}</span>
+    <div class="nav-arrows">
+      <button (click)="previousPage()">&lt;</button>
+      <span>{{ currentPage }} / {{ totalPages }}</span>
+      <button (click)="nextPage()">&gt;</button>
+    </div>
+  </div>
+</div>
+
+<app-popup
+  *ngIf="showPopup"
+  [form]="selectedVisiteur"
+  (addVisiteur)="addNewVisiteur($event)"
+  (closePopup)="showPopup = false">

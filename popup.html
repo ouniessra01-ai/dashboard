@@ -1,0 +1,51 @@
+<div class="popup-backdrop" (click)="close()"></div>
+<div class="popup">
+  <h2>Modifier le visiteur</h2>
+  <div class="section-header">
+    <span>Informations basiques</span> | <span>Pièces jointes</span>
+  </div>
+  <form (ngSubmit)="enregistrer()" class="info-section">
+    <div class="info-row">
+      <label class="label" for="nom">Expédition (10 chiffres):</label>
+      <input id="nom" [(ngModel)]="form.nom" name="nom" required />
+    </div>
+    <div class="info-row">
+      <label class="label" for="creneau">Créneaux Horaires:</label>
+      <input id="creneau" [(ngModel)]="form.creneau" name="creneau" />
+    </div>
+    <div class="info-row">
+      <label class="label" for="expeditions">Nb d'expéditions:</label>
+      <input id="expeditions" [(ngModel)]="form.expeditions" name="expeditions" />
+    </div>
+    <div class="info-row">
+      <label class="label" for="phone">Numéro de téléphone:</label>
+      <input id="phone" [(ngModel)]="form.phone" name="phone" />
+    </div>
+    <div class="info-row">
+      <label class="label" for="plate">Immatriculation:</label>
+      <input id="plate" [(ngModel)]="form.plate" name="plate" />
+    </div>
+    <div class="info-row">
+      <label class="label" for="carrier">Carrière:</label>
+      <select id="carrier" [(ngModel)]="form.carrier" name="carrier">
+        <option value="Camion">Camion</option> 
+      </select>
+    </div>
+    <div class="info-row">
+      <label class="label" for="goods">Type de marchandise:</label>
+      <select id="goods" [(ngModel)]="form.goods" name="goods">
+        <option>Biens normales</option>
+        <option>Biens dangereux</option>
+        <option>Produits frais</option>
+      </select>
+    </div>
+    <div class="info-row">
+      <label class="label" for="tracking">Temps de suivi:</label>
+      <input id="tracking" [(ngModel)]="form.tracking" name="tracking" />
+    </div>
+    <div class="actions">
+      <button type="button" (click)="close()">FERMER</button>
+      <button type="submit">ENREGISTRER</button>
+    </div>
+  </form>
+</div>

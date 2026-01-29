@@ -1,0 +1,200 @@
+.visiteur-page {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .add-icon {
+      font-size: 28px;
+      color: #ffd700;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .table-container {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .visiteur-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: auto;
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      vertical-align: middle;
+      word-break: break-word;
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    .status.en-attente { color: orange; }
+    .status.verifie { color: green; }
+    .status.parti { color: gray; }
+    .status.expecte { color: blue; }
+
+    .profil.entrant::after { content: ' ←'; }
+    .profil.sortant::after { content: ' →'; }
+  }
+
+  .actions-cell {
+    white-space: nowrap;
+
+    .edit-icon,
+    .delete-icon {
+      margin-right: 10px;
+      font-size: 18px;
+      vertical-align: middle;
+      transition: transform 0.2s ease;
+    }
+
+    .edit-icon {
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    .delete-icon {
+      color: #dc3545;
+      cursor: pointer;
+    }
+
+    i:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-arrows {
+      display: flex;
+      gap: 10px;
+
+      button {
+        background: none;
+        border: 1px solid #ccc;
+        padding: 4px 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.status.parti {
+  color: red !important;
+  font-weight: bold;
+}
+
+.localisation-enroute {
+  color: red !important;
+  font-weight: bold;
+}
+
+.localisation-site {
+  color: green !important;
+  font-weight: bold;
+}
+
+:host-context(body.dark-mode) {
+  ::ng-deep .visiteur-page,
+  ::ng-deep .visiteur-table th,
+  ::ng-deep .visiteur-table td,
+  ::ng-deep .visiteur-page h2,
+  ::ng-deep .visiteur-page button {
+    color: #f0f0f0 !important;
+  }
+
+  ::ng-deep .status.verifie { color: #90ee90 !important; }
+  ::ng-deep .status.en-attente { color: #ffd700 !important; }
+  ::ng-deep .status.parti { color: #ff6b6b !important; }
+  ::ng-deep .status.expecte { color: #87cefa !important; }
+  ::ng-deep .localisation-enroute { color: #ff6b6b !important; }
+  ::ng-deep .localisation-site { color: #90ee90 !important; }
+}
+
+:host-context(body.light-mode) {
+  ::ng-deep .visiteur-page,
+  ::ng-deep .visiteur-table th,
+  ::ng-deep .visiteur-table td,
+  ::ng-deep .visiteur-page h2,
+  ::ng-deep .visiteur-page button {
+    color: #222 !important;
+  }
+
+  ::ng-deep .status.verifie { color: green !important; }
+  ::ng-deep .status.en-attente { color: orange !important; }
+  ::ng-deep .status.parti { color: red !important; }
+  ::ng-deep .status.expecte { color: blue !important; }
+  ::ng-deep .localisation-enroute { color: red !important; }
+  ::ng-deep .localisation-site { color: green !important; }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .actions-cell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .visiteur-table th,
+  .visiteur-table td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .visiteur-table th:nth-child(2),
+  .visiteur-table td:nth-child(2),
+  .visiteur-table th:nth-child(4),
+  .visiteur-table td:nth-child(4) {
+    display: none;
+  }
+}
+.search-bar {
+  margin-bottom: 15px;
+  width: 100%;
+
+  input {
+    width: 100%;
+    min-width: 300px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}
